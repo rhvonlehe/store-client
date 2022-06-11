@@ -1,0 +1,3 @@
+[submodule "deps/store-library"]
+	path = deps/store-library
+	url = git@github.com:rhvonlehe/store-library.git
