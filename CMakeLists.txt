@@ -7,6 +7,7 @@ project(store-client VERSION 1.0 LANGUAGES CXX)
 add_subdirectory(deps/store-library)
 
 add_executable(client)
+target_compile_features(client PRIVATE cxx_std_17)
 
 target_sources(client
     PRIVATE
