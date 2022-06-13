@@ -5,10 +5,15 @@ Alternately, multiple 'client' processes can be started independently on the com
 
 Instructions for use:
 
+Prerequisites: Must have CMake 3.12 or newer, Windows 10/11, MSVC2019 or later
 
-
-
-
+1. git clone git@github.com:rhvonlehe/store-client.git
+2. git submodule update --init --recursive
+3. mkdir build
+4. cd build
+5. cmake -G <generator-of-choice> -S ../
+6. ./client.exe <num_of_customers>
+  
 
 
 Notes:
