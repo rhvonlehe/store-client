@@ -30,9 +30,11 @@ Q: What about the assignment was unclear?
 A: Not perfectly clear if threads or processes would be used by the store client - I made it safe for both.  Also, the level of attention to detail needed is subjective - e.g. do I need to do proper error checking or exception handling for all possible cases.  I did some, but could certainly do more if this wasn't a timed exercise.
   
 Q: Was the level of difficulty appropriate?
+  
 A: I'd say yes, given this is for a senior level position.  I took longer than my own estimate, but I was unfamiliar with nlohmann-json.
 
 Q: Explain technical decisions
+  
 A: I'll list the ones I'm most aware of below.
   
 * I decided to use an OS (Windows) mutex because I wasn't clear whether than was the goal (vs a C++ thread mutex).  The mutex protects simultaneous access to a file, thus keeping its integrity.  For reads in the API the mutex is released as soon as the json model is created.  For the purchase case, the mutex is held through a read/update cycle.
