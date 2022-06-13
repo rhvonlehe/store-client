@@ -13,7 +13,7 @@ public:
     // itemsToPurchase is the number of attempted purchases
     void run(uint32_t itemsToPurchase);
 private:
-    Store store;
+    sl::Store store;
 };
 
 #endif // CUSTOMER_H
