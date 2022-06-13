@@ -12,6 +12,7 @@ target_compile_features(client PRIVATE cxx_std_17)
 target_sources(client
     PRIVATE
     main.cpp
+    Customer.cpp
 )
 
 target_link_libraries(client
