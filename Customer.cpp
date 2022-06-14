@@ -16,7 +16,6 @@ int getRandomInt(int min, int max)
     std::uniform_int_distribution<int> dist(min, max);
 
     int retval = dist(mt);
-    cout << "dist: " << retval << endl;
     return retval;
 }
 
@@ -33,12 +32,11 @@ void Customer::run(uint32_t itemsToPurchase)
     {
         auto families = store.getProductFamilies();
 
-        int randomFamily = getRandomInt(0, static_cast<int>(families.size()));
-        cout << "randomFamily: " << randomFamily;
+        int randomFamily = getRandomInt(0, static_cast<int>(families.size() - 1));
 
         auto familyProducts = store.getProductsInFamily(families[randomFamily]);
 
-        int randomProductIndex = getRandomInt(0, static_cast<int>(familyProducts.size()));
+        int randomProductIndex = getRandomInt(0, static_cast<int>(familyProducts.size() - 1));
 
         auto product = store.getProductInfo(familyProducts[randomProductIndex].id);
 
@@ -50,9 +48,9 @@ void Customer::run(uint32_t itemsToPurchase)
         else
             cout << " unsuccessfully" << endl;
 
-        itemsToPurchase--;                               // decrement whether attempt worked or not
+        itemsToPurchase--;          // decrement whether attempt worked or not
 
-        uint32_t sleepTime = getRandomInt(1, 500);   //  rand() % randomDelayMaxMs;
+        uint32_t sleepTime = getRandomInt(1, 500);
         this_thread::sleep_for(chrono::milliseconds(sleepTime));
     }
 
